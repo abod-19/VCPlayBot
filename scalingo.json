@@ -1,64 +1,83 @@
 {
-  "name": "𝐊𝐈𝐍𝐆",
-  "description": "〔 سـورس الملك 𝚂𝙾𝚄𝚁𝙲𝙴 𝙺𝙸𝙽𝙶 𖤍 \n افضـل سـورس لتشغيل الصوتيات في المكالمه  › تحديثـات متواصله › 〔 حصريـاً 〕\n - مطـور السـورس : 𝙰𝙱𝙳𝚄𝙻𝙻𝙰𝙷",
-  "keywords": ["ze", "ai","telegram"],
+  "name": "VCPlayBot",
+  "logo": "https://telegra.ph/file/7ffa8d18b9b7f1b51a81e.jpg",
+  "description": "Open-Source bot to play songs in your Telegram s Group Voice Chat. Powered by PyTgCalls.",
+  "keywords": ["music", "voicechat", "telegram"],
   "repository": "https://github.com/abod-19/VCPlayBot",
-  "logo": "https://graph.org/file/2f199ef466e7950dd5e79.jpg",
   "stack": "container",
+  "buildpacks": [
+   {
+     "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+   }   
+  ],        
   "env": {
-    "API_ID": {
-      "description": "اتركه كما هو.",
-      "required": true,
-      "value": "20036317"
-    },
-    "API_HASH": {
-      "description": "اتركه كما هو.",
-      "required": true,
-      "value": "986cb4ba434870a62fe96da3b5f6d411"
-    },
-    "BOT_NAME": {
-      "description": "اسم البوت بالعربي.",
-      "required": true,
-      "value": ""
+    "SESSION_NAME": {
+      "description": "Pyrogram session string",
+      "required": true
     },
     "BOT_TOKEN": {
-      "description": "ضع هنا تكون البوت الذي صنعته من @BotFather.",
-      "required": true,
+      "description": "A bot token from @BotFather",
+      "required": true
+    },
+    "BOT_USERNAME": {
+      "description": "Your bot s username without @",
+      "required": true
+    },
+    "BOT_NAME": {
+      "description": "Your MusicPlayer Bot Name.",
+      "required": false,
       "value": ""
     },
-    "START_IMG_URL": {
-      "description": "رابط صوره start او اتركه كما هو.",
-      "required": true,
-      "value": "https://te.legra.ph/file/e8bdc13568a49de93b071.jpg"
+    "SUPPORT_GROUP": {
+      "description": "Your MusicPlayer support group without @ [Leave this if you don t have one]",
+      "required": false,
+      "value": "AwesomeSupport"
     },
-    "MONGO_DB_URI": {
-      "description": "لا تغيره. او قم بانشاء قاعده البيانات. الشرح https://t.me/EF_19/2.",
-      "required": true,
-      "value": ""
+    "PROJECT_NAME": {
+      "description": "Your MusicPlayer project Name.",
+      "required": false,
+      "value": "VCPlayBot2.0"
     },
-    "OWNER_ID": {
-      "description": "ايدي المستخدم الذي ترغب في إضافته كـ مطور البوت",
-      "required": true,
-      "value": ""
+    "ASSISTANT_NAME": {
+      "description": "Your MusicPlayer s assistant Username without @.",
+      "required": true
     },
-    "STRING_SESSION": {
-      "description": "ضع هنا كود بايروجرام الحساب المساعد",
-      "required": true,
-      "value": ""
+    "ARQ_API_KEY": {
+      "description": "Get from @ARQRobot.",
+      "required": false,
+      "value": "VKSSQH-SRNJYZ-MSOJAI-QALESR-ARQ"
+    },    
+    "BG_IMAGE": {
+      "description": "BG image of bot (Use transparent one) [IGNORE].",
+      "required": false,
+      "value": "https://telegra.ph/file/9b13ea3ce046a1a5c8098.png"
+    },     
+    "UPDATES_CHANNEL": {
+      "description": "Updates Channel without @ [Leave this if you don t have one].",
+      "required": false,
+      "value": "LaylaList"
+    },    
+    "API_ID": {
+      "description": "App ID from my.telegram.org/apps",
+      "required": true
     },
-    "CHANNEL_NAME": {
-      "description": "اسم قناتك.",
-      "required": true,
-      "value": "𝚂𝚄𝙾𝚁𝙲𝙴 𝙺𝙸𝙽𝙶"
+    "PMPERMIT": {
+      "description": "Change to turn off",
+      "required": false,
+      "value": "ENABLE"
+    },    
+    "API_HASH": {
+      "description": "App hash from my.telegram.org/apps",
+      "required": true
     },
-    "CHANNEL_LINK": {
-      "description": "يوزر قناتك بدون @.",
-      "value": "EF_19"
+    "SUDO_USERS": {
+      "description": "List of user IDs counted as admin everywhere (separated by space).",
+      "required": true
     },
-    "LOGGER_ID": {
-      "description": "ادخل ايدي مجموعة السجل بجانب الرقم -100 فـي المربع〔 سوي مجموعة جديدة وروح لاعدادات المجموعة وخلي السجل ظاهر .. بعدها ارفع البوت والحساب المساعد إشـراف وافتـح المكالمه بعدها جيب ايدي المجموعة لهنا 〕.",
+    "DURATION_LIMIT": {
+      "description": "Max audio duration limit for downloads (minutes).",
       "required": true,
-      "value": ""
+      "value": "15"
     }
   }
 }
